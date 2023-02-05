@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: monocraft;
+            font-size: 20pt;
+            background-color: rgb(70, 167, 61);
+            color: white;
+        }
+        section{
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border-radius: 20px;
+            color: black; 
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
+        }   
+        footer{
+            margin-top: 10px;
+        }
+        div#foto{
+            width: 400px;
+            height: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body >
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <section>
+        <br><br>
+        Número:
+        <input type="number" id="n">
+        <input type="button" onclick="gerar()" value="Gerar">
+        <br><br>
+        <p id="tab"></p>
+    </section>
+
+    <footer>
+        by: Lucas Kendy
+    </footer>
+    
+    <script>
+        function gerar(){
+            var n=document.getElementById('n')
+            var tab=document.getElementById('tab')
+            tab.innerHTML=''
+            if(n.value.lenght==0){
+                window.alert('Impossivel gerar tabuada!')
+            }else{
+                n=Number(n.value)
+                for(let i=0;i<=10;i++){
+                    tab.innerHTML+=`${i}x${n}=${i*n}<br>`
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
